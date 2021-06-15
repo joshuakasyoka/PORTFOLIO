@@ -8,30 +8,112 @@
     <body>
         <div class="yellow_border square_body">
             <div class="nav_bar">
-                <div class="yellow_border nav_button"><h1>User Experience</h1></div>
+                <div class="yellow_border nav_button"><h1>Design</h1></div>
                 <a href="../homepage/homepage.html"><div><img src="assets/Polygon 1 (2).png"></div></a>
             </div>
                 <div class="articles_container">
-                    <div class="line_container">
-                        <a href="../articles/visual_verbal_hybridity.html"><div class="article_container"><img src="assets/il_seven.png" alt="illustration_one"><h2>visual-verbal hybridity</h2></div></a>
-                        <a href="../articles/a_narrative_architecture.html"><div class="article_container"><img src="assets/il_six.png" alt="illustration_one"><h2>a narrative architecture</h2></div></a>
-                        <a href="../articles/postmodernism.html"><div class="article_container"><img src="assets/il_one.png" alt="illustration_one"><h2>postmodernism and metafiction</h2></div></a>
-                    </div>
-                    <div class="line_container">
-                        <a href="../articles/country_city.html"><div class="article_container"><img src="assets/il_two.png" alt="illustration_one"><h2>the country and the city</h2></div></a>
-                        <a href="../articles/urban_planning.html"><div class="article_container"><img src="assets/il_three.png" alt="illustration_one"><h2>urban planning in literature</h2></div></a>
-                        <a href="../articles/againist_the_clock.html"><div class="article_container"><img src="assets/il_four.png" alt="illustration_one"><h2>against the clock</h2></div></a>
-                    </div>
-                    <div class="line_container">
-                        <a href="../articles/its_nice_that.html"><div class="article_container"><img src="assets/il_five.png" alt="illustration_one"><h2>It's Nice That</h2></div></a>
-                        <a href="../articles/stanley_elkin.html"><div class="article_container"><img src="assets/il_seven.png" alt="illustration_one"><h2>Stanley Elkin's short stories</h2></div></a>
-                        <a href="../articles/raymond_william.html"><div class="article_container"><img src="assets/il_six.png" alt="illustration_one"><h2>George Elliot and Raymond Williams</h2></div></a>
+					<article class="slide">
+						<img id="slide_image"></img>
+					    <h2 id="slide_heading"></h2>
+                    </article>
+                    <div class="pair_buttons">
+                    <button class="navButtons" id="back" onclick="handleSlideClick(-1)">BACK</button>
+                    <button class="navButtons" id="next" onclick="handleSlideClick(1)">NEXT</button>
                     </div>
                 </div>
-                <div class="footer">
-                <div><h2>more</h2></div>
-             </div>
             </div>
+
+            <script type="text/javascript">
+
+            var articleData = [
+            {
+              "src": "assets/imperial_codelab.png",
+              "heading": "Imperial Code Labs",
+            },
+            {
+              "src": "assets/the_standard_store.png",
+              "heading": "The Standard Store",
+            },
+            {
+              "src": "assets/turing_lab.png",
+              "heading": "Turinglab",
+            },
+            {
+              "src": "assets/sneaky_magazine.png",
+              "heading": "Sneaky Pete's",
+            },
+            {
+              "src": "assets/student_newspaper.png",
+              "heading": "The Student",
+            },
+            {
+              "src": "assets/crumble.png",
+              "heading": "Crumble Magazine",
+            },
+            {
+              "src": "assets/character_design.png",
+              "heading": "Character Design",
+            },
+            {
+              "src": "assets/shandy_shack.png",
+              "heading": "IPA branding",
+            },
+            {
+              "src": "assets/political_drawing.png",
+              "heading": "Political Editorials",
+            },
+            {
+              "src": "assets/paradigm_lab.png",
+              "heading": "Paradigm Lab",
+            },
+            ]
+            </script>
+
+	        <script type="text/javascript"> 
+           var slideId = 0
+            document.addEventListener("DOMContentLoaded", function() {
+                populateSlide(slideId)
+            });
+          function populateSlide(id) {
+
+            if(id == -1) {
+                slideId = articleData.length-1
+                id = slideId
+            } else if(id == articleData.length) {
+                slideId = 0
+                id = slideId
+            }
+
+            var article = articleData[id]
+            var imgElement = document.getElementById("slide_image")
+            var headingElement = document.getElementById("slide_heading")
+            // var textElement = document.getElementById("slide_text")
+
+            imgElement.setAttribute("src", article.src);
+            imgElement.setAttribute("alt", article.heading);
+
+            headingElement.innerHTML = article.heading;
+            // textElement.innerHTML = article.text;
+
+            var backButton = document.getElementById("back")
+            var nextButton = document.getElementById("next")
+
+            // if(id == 0) {
+            //   backButton.style.visibility = "hidden"
+            //   nextButton.style.visibility = "visible"
+            // } else if (id == articleData.length-1) {
+            //   nextButton.style.visibility = "hidden"
+            //   backButton.style.visibility = "visible"
+            // } else {
+            //   backButton.style.visibility = "visible"
+            //   nextButton.style.visibility = "visible"
+            // }
+          }
+          function handleSlideClick(direction) {
+            slideId += direction
+            populateSlide(slideId)
+          }
+         </script>
     </body>
 
 

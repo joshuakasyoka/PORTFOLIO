@@ -95,58 +95,58 @@
                   ]
             </script>
 
-            <script type="text/javascript">
+<script type="text/javascript">
 
-            var slideId = 0
-                document.addEventListener("DOMContentLoaded", function() {
-                 number(slideId)
-                });
+    var slideId = 0
+        document.addEventListener("DOMContentLoaded", function() {
+         number(slideId)
+        });
 
-                function number(num) {
+        function number(num) {
 
-                    var article_container_1 = document.getElementById("article_container_1")
-                    var article_container_2 = document.getElementById("article_container_2")
-                    var article_container_3 = document.getElementById("article_container_3")
-                    var article_container_4 = document.getElementById("article_container_4")
-                    var article_container_5 = document.getElementById("article_container_5")
-                    var article_container_6 = document.getElementById("article_container_6")
-                    var article_container_7 = document.getElementById("article_container_7")
-                    var article_container_8 = document.getElementById("article_container_8")
-                    var article_container_9 = document.getElementById("article_container_9")
+            var article_container_1 = document.getElementById("article_container_1")
+            var article_container_2 = document.getElementById("article_container_2")
+            var article_container_3 = document.getElementById("article_container_3")
+            var article_container_4 = document.getElementById("article_container_4")
+            var article_container_5 = document.getElementById("article_container_5")
+            var article_container_6 = document.getElementById("article_container_6")
+            var article_container_7 = document.getElementById("article_container_7")
+            var article_container_8 = document.getElementById("article_container_8")
+            var article_container_9 = document.getElementById("article_container_9")
 
-                    var article = articleData[num]
-                    var imgElement = document.getElementById("article_image")
-                    var articleText= document.getElementById("article_text")
-                    var articleHeader= document.getElementById("article_header")
-                    var topLineContainer = document.getElementById("top_line_container")
-                    var rightPage = document.getElementById("right_page")
+            var article = articleData[num]
+            var imgElement = document.getElementById("article_image")
+            var articleText= document.getElementById("article_text")
+            var articleHeader= document.getElementById("article_header")
+            var topLineContainer = document.getElementById("top_line_container")
+            var rightPage = document.getElementById("right_page")
 
-                    if (num === 0) {
-                        topLineContainer.style.height ="0px"
-                        rightPage.setAttribute("href", "../homepage/homepage.html")
-                            }
-                        else if (num > 0) {
-                        rightPage.setAttribute("href", "../writing_page/writing_page.html")
-                        topLineContainer.style.height ="100%"
-                    article_container_1.remove()
-                    article_container_2.remove()
-                    article_container_3.remove()
-                    article_container_4.remove()
-                    article_container_5.remove()
-                    article_container_6.remove()
-                    article_container_7.remove()
-                    article_container_8.remove()
-                    article_container_9.remove()
-
-                    imgElement.setAttribute("src", article.article_image);
-                    articleText.innerHTML = article.article_text;
-                    articleHeader.innerHTML = article.article_header;
-
-
+            if (num === 0) {
+                topLineContainer.style.height ="0px"
+                rightPage.setAttribute("href", "../homepage/homepage.html")
                     }
-                }
-                
-            </script>
-    </body>
-    
+                else if (num > 0) {
+                rightPage.setAttribute("href", "../writing_page/writing_page.html")
+                topLineContainer.style.height ="100%"
+            article_container_1.remove()
+            article_container_2.remove()
+            article_container_3.remove()
+            article_container_4.remove()
+            article_container_5.remove()
+            article_container_6.remove()
+            article_container_7.remove()
+            article_container_8.remove()
+            article_container_9.remove()
+
+            imgElement.setAttribute("src", article.article_image);
+            articleText.innerHTML = article.article_text;
+            articleHeader.innerHTML = article.article_header;
+
+
+            }
+        }
+        
+    </script>
+</body>
+
 </html>
